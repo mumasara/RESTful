@@ -1,0 +1,301 @@
+/*
+    Document   : default
+    Created on : Oct 12, 2011, 8:40:28 PM
+    Author     : charles
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body {
+  display: block;
+  margin: 8px;
+  background: #e2e2e2;
+  padding: 0 2em;
+}
+
+body, input {
+  color: #373737;
+  font: 15px Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.625;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+#admin-bar {
+  direction: ltr;
+  background-color: #777;
+  background-image: -moz-linear-gradient(bottom,#666,#7F7F7F);
+  background-image: -webkit-gradient(linear,left bottom,left top,from(#666),to(#7F7F7F));
+  color: #ddd;
+  font: normal 12px/28px Arial,Helvetica,sans-serif;
+  height: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  min-width: 960px;
+}
+
+#admin-bar * {
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: static;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1;
+  font: normal 13px/28px Arial,Helvetica,sans-serif;
+  color: #ddd;
+  text-shadow: #555 0 -1px 0;
+}
+
+#admin-bar .quicklinks ul {
+  text-align: left;
+  margin-left: 30px;
+}
+
+#admin-bar ul, #admin-bar ul li {
+  background: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 99999;
+}
+
+#admin-bar .quicklinks ul li {
+  float: left;
+}
+
+#admin-bar .quicklinks > ul > li > a{
+  border-right: 1px solid #686868;
+  border-left: 1px solid gray;
+}
+
+#admin-bar .quicklinks li#home {
+  border-left: none;
+}
+
+#admin-bar .quicklinks > ul > li:hover {
+  background: #333;
+}
+
+#admin-bar .quicklinks a {
+  height: 28px;
+  display: block;
+  padding: 0 .85em;
+  margin: 0;
+}
+
+#admin-bar a, #admin-bar a:hover {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background: none;
+}
+
+#admin-bar #adminbarsearch {
+  float: right;
+  height: 18px;
+  padding: 3px;
+  margin: 0;
+}
+
+#admin-bar #adminbarsearch .admin-bar-input {
+  width: 140px;
+  height: auto;
+  float: left;
+  font: 12px Arial,Helvetica,sans-serif;
+  color: #555;
+  text-shadow: 0 1px 0 white;
+  border: 1px solid #626262;
+  padding: 2px 3px;
+  margin: 0 3px 0 0;
+  background: #ddd;
+  -moz-box-shadow: inset 2px 2px 1px #cdcdcd;
+  -webkit-box-shadow: inset 2px 2px 1px #cdcdcd;
+  box-shadow: inset 2px 2px 1px #cdcdcd;
+  -webkit-border-radius: 0;
+  -khtml-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#admin-bar #adminbarsearch .admin-bar-button {
+  font: bold 12px Arial,Helvetica,sans-serif;
+  color: #444;
+  text-shadow: 0 1px 0 #eee;
+  cursor: pointer;
+  float: left;
+  background: #aaa;
+  background: -moz-linear-gradient(bottom,#AAA,#CECECE);
+  background: -webkit-gradient(linear,left bottom,left top,from(#AAA),to(#CECECE));
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #626262;
+  padding: 2px 13px;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+#page {
+  margin: 2em auto;
+  max-width: 1000px;
+}
+
+#branding {
+  margin: 0 7.6%;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+#page-title {
+  font-family: Helvetica, Arial, sans-serif;
+  margin-right: 270px;
+  padding: 3.65625em 0 0;
+  color: #111;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+#content {
+  text-align: center;
+}
+
+.main-table {
+  font-family: Verdana;
+  text-align: left;
+  width: 900px;
+  margin: 2em auto;
+  border: 2px dashed #333;
+  border-radius: 10px;
+  padding: 13px 23px 18px 23px;
+}
+
+.main-table thead {
+  text-align: center;
+  font-weight: bold;
+}
+
+.main-table.order {
+  text-align: center;
+}
+
+#order-table tr td {
+  padding: 5px 0;
+}
+
+#order-table a {
+  text-decoration: none;
+  color: #333;
+}
+
+#order-table .order-id {
+  width: 500px;
+}
+
+#order-table .action {
+  text-align: center;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+#order-table .action.update {
+  width: 83px;
+}
+
+#order-table .action.pay {
+  width: 70px;
+}
+
+#order-table .action.cancel {
+  width: 80px;
+}
+
+#order-table .action.option {
+  width: 90px;
+}
+
+#order-table td > a > img {
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.buttons {
+  float: right;
+  padding-right: 80px;
+}
+
+.button {
+  display: inline-block;
+  min-width: 54px;
+  text-align: center;
+  font-weight: bold;
+  padding: 0 8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.buttons .submit-button {
+  margin: 0 1.5em 1.2em 0;
+  height: 32px;
+  font-size: 13px;
+  line-height: 29px;
+  vertical-align: bottom;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  background-clip: border-box;
+  background-color: #d14836;
+  background-image: -webkit-linear-gradient(top, rgb(221,75,57), rgb(209,72,54));
+  color: white;
+  border-color: transparent;
+}
+
+select {
+  font-size: 13px;
+  padding: 5px;
+  height: 20px;
+  margin: 2px 0 0 0;
+  border: 1px solid #bdc7d8;
+  font-family: inherit;
+  background-color: #ddd;
+  -webkit-appearance: menulist;
+  box-sizing: border-box;
+  -webkit-box-align: center;
+  white-space: pre;
+  color: black;
+}

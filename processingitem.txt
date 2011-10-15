@@ -1,0 +1,2 @@
+id drink size cost addition payType statusFlag
+10-30-030 latte medium 4.26 milk card false
