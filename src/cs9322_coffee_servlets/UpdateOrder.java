@@ -34,7 +34,7 @@ public class UpdateOrder extends HttpServlet {
 		try {
 			String id = request.getParameter("id");
 			URL restURL = new URL(
-					"http://localhost:8081/9322_assignment3/rest/orders/" + id);
+					"http://localhost:8080/9322_assignment3/rest/orders/" + id);
 			
 		      BufferedReader br = new BufferedReader(new InputStreamReader(restURL.openStream()));
 		      String orders = br.readLine();

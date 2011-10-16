@@ -4,12 +4,18 @@
  */
 package cs9322_coffee_servlets;
 
+import cs9322_coffee_model.Coffee;
+import cs9322_coffee_util.CoffeeMaker;
+import cs9322_coffee_util.CoffeeParser;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 /**
  *
@@ -27,6 +33,18 @@ public class OrderDetail extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     String id = request.getParameter("id");
+    CoffeeParser parser = new CoffeeParser("http://localhost:8080/9322_assignment3/rest/orders/" + id);
+    Document document = parser.getParsedDocument();
+
+    Node root = document.getFirstChild();
+    Node coffeeNode = root;
+
+    Coffee coffee = new Coffee();
+    CoffeeMaker.make(coffee, coffeeNode);
+    request.setAttribute("coffee", coffee);
+    RequestDispatcher dispatcher = request.getRequestDispatcher("/orderDetail.jsp");
+    dispatcher.forward(request, response);
+
   }
 
   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

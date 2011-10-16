@@ -3,7 +3,6 @@
     Created on : Oct 12, 2011, 8:31:33 PM
     Author     : charles
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="cs9322_coffee_model.Coffee"%>
@@ -20,8 +19,9 @@
       <div class="quicklinks">
         <ul>
           <li id="home"><a href="/">Home</a></li>
-          <li id="refresh"><a href="Barista">Refresh</a></li>
-          <li id="cashier"><a href="Cashier">Customer/Cashier</a></li>
+          <li id="add-order"><a href="addOrder.jsp">Add</a></li>
+          <li id="check-order"><a href="Cashier">Check</a></li>
+          <li id="barista"><a href="Barista">Barista</a></li>
         </ul>
       </div>
       <div id="admin-bar-search-wrap">
@@ -33,18 +33,11 @@
     </div>
     <div id="page" class="hfeed">
       <div id="branding" class="banner">
-        <h1 id="page-title">Barista View</h1>
+        <h1 id="page-title">Your operation is successful</h1>
       </div>
       <div id="content">
-        <table id="order-table" class="main-table">
-          <% for(Coffee order: orders) { %>
-          <tr>
-            <td class="order-id"><%=order.getId() %></td>
-            <td class="action prepare"><a href="PrepareOrder?id=<%=order.getId()%>">Prepare</a></td>
-            <td class="action check"><a href="CheckOrderPayment?id=<%=order.getId()%>">Check Payment</a></td>
-            <td class="action release"><a href="ReleaseCoffee?id=<%=order.getId()%>">Release</a></td>
-          </tr>
-          <% } %>
+        <table class="main-table">
+          <tr><td><%=request.getAttribute("feedback") %></td></tr>
         </table>
       </div>
     </div>

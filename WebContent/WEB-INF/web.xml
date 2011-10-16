@@ -15,6 +15,10 @@
     <servlet-class>cs9322_coffee_servlets.Cashier</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>Barista</servlet-name>
+    <servlet-class>cs9322_coffee_servlets.Barista</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>DeleteOrder</servlet-name>
     <servlet-class>cs9322_coffee_servlets.DeleteOrder</servlet-class>
   </servlet>
@@ -37,6 +41,10 @@
   <servlet-mapping>
     <servlet-name>Cashier</servlet-name>
     <url-pattern>/Cashier</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Barista</servlet-name>
+    <url-pattern>/Barista</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteOrder</servlet-name>

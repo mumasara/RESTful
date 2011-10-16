@@ -288,7 +288,7 @@ h1, h2, h3, h4, h5, h6 {
 select {
   font-size: 13px;
   padding: 5px;
-  height: 20px;
+  height: 32px;
   margin: 2px 0 0 0;
   border: 1px solid #bdc7d8;
   font-family: inherit;
