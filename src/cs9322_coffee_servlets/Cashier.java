@@ -51,7 +51,7 @@ public class Cashier extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     try {
-      URL restURL = new URL("http://localhost:8080/9322_assignment3/rest/orders");
+      URL restURL = new URL("http://localhost:8081/9322_assignment3/rest/orders");
       BufferedReader br = new BufferedReader(new InputStreamReader(restURL.openStream()));
       String orders = br.readLine();
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -70,12 +70,19 @@ public class Cashier extends HttpServlet {
     	  Coffee newItem = new Coffee();
     	  coffee = coffee.getFirstChild();
     	  newItem.setAddition(coffee.getTextContent());
+    	  
+    	  //System.out.println("in Cashier:: "+coffee.getTextContent());
+    	  
     	  coffee = coffee.getNextSibling();
     	  newItem.setCost(Float.parseFloat(coffee.getTextContent()));
     	  coffee = coffee.getNextSibling();
     	  newItem.setDrink(coffee.getTextContent());
     	  coffee = coffee.getNextSibling();
     	  newItem.setId(coffee.getTextContent());
+    	  
+    	  coffee = coffee.getNextSibling();
+    	  newItem.setPayType(coffee.getTextContent());
+    	  
     	  coffee = coffee.getNextSibling();
     	  newItem.setSize(coffee.getTextContent());
     	  coffee = coffee.getNextSibling();

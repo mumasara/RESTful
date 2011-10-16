@@ -23,7 +23,7 @@ public class ordersFileDao {
 		result = result + c.getSize()+" ";
 		result = result + Float.toString(c.getCost())+" ";
 		result = result + c.getAddition() + " ";
-		result = result + c.getPaytype() + " ";
+		result = result + c.getPayType() + " ";
 		if(c.getStatusFlag()==true){
 			result += "true";
 		}
@@ -67,7 +67,7 @@ public class ordersFileDao {
 			while(i < currentOrderList.size()){
 				writer.append( currentOrderList.get(i).getId() + " " + currentOrderList.get(i).getDrink() + " " + 
 						currentOrderList.get(i).getSize() + " " + currentOrderList.get(i).getCost() + " " +
-						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPaytype() + " " +
+						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPayType() + " " +
 						currentOrderList.get(i).getStatusFlag() + "\n");
 				i++;
 			}
@@ -94,7 +94,7 @@ public class ordersFileDao {
 					currentOrderList.get(i).setSize(c.getSize());
 					currentOrderList.get(i).setCost(c.getCost());
 					currentOrderList.get(i).setAddition(c.getAddition());
-					currentOrderList.get(i).setPayType(c.getPaytype());
+					currentOrderList.get(i).setPayType(c.getPayType());
 					currentOrderList.get(i).setStatusFlag(c.getStatusFlag());
 				}
 				i++;
@@ -104,7 +104,7 @@ public class ordersFileDao {
 			while(i < currentOrderList.size()){
 				writer.append( currentOrderList.get(i).getId() + " " + currentOrderList.get(i).getDrink() + " " + 
 						currentOrderList.get(i).getSize() + " " + currentOrderList.get(i).getCost() + " " +
-						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPaytype() + " " +
+						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPayType() + " " +
 						currentOrderList.get(i).getStatusFlag() + "\n");
 				i++;
 			}
@@ -141,7 +141,7 @@ public class ordersFileDao {
 			while(i < currentOrderList.size()){
 				writer.append( currentOrderList.get(i).getId() + " " + currentOrderList.get(i).getDrink() + " " + 
 						currentOrderList.get(i).getSize() + " " + currentOrderList.get(i).getCost() + " " +
-						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPaytype() + " " +
+						currentOrderList.get(i).getAddition() + " " + currentOrderList.get(i).getPayType() + " " +
 						currentOrderList.get(i).getStatusFlag() + "\n");
 				i++;
 			}
@@ -150,9 +150,9 @@ public class ordersFileDao {
 			//not deleting an order when it is paid
 			//add as a payment into the payment file
 			p.setPID(order_id);
-			p.setPayType(temp.getPaytype());
+			p.setPayType(temp.getPayType());
 			p.setAmount(temp.getCost());
-			p.setDetails(temp.getPaytype());
+			p.setDetails(temp.getPayType());
 			p.setStatusFlag(true);
 			
 			pdf.addPayment(order_id, p);
@@ -191,7 +191,7 @@ public class ordersFileDao {
 				c.setSize(currentOrderList.get(i).getSize());
 				c.setCost(currentOrderList.get(i).getCost());
 				c.setAddition(currentOrderList.get(i).getAddition());
-				c.setPayType(currentOrderList.get(i).getPaytype());
+				c.setPayType(currentOrderList.get(i).getPayType());
 				c.setStatusFlag(currentOrderList.get(i).getStatusFlag());
 				break;
 			}
@@ -222,12 +222,16 @@ public class ordersFileDao {
 				c.setAddition(fields[4]);
 				c.setPayType(fields[5]);
 				
+				System.out.println("in ordersFileDao:: "+c.getPayType());
+				
 				if(fields[6].equals("true")==true){
 					c.setStatusFlag(true);
 				}
 				else{
 					c.setStatusFlag(false);
 				}
+				//System.out.println("in ordersFileDao:: "+c.getStatusFlag());
+				
 				orderList.add(c);
 			}
 			read.close();

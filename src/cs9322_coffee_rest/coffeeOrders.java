@@ -180,38 +180,61 @@ public class coffeeOrders {
 		resp.sendRedirect("../../create_order.jsp");
 	}
 	
-	
-	@Path("get_order")
+
+	@Path("update_order")
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public void getDrinkOrder(@FormParam("order_id") String id,
-			@Context HttpServletResponse servletResponse,
-			@Context HttpServletRequest request
-	) throws IOException{
-//		HttpSession session = request.getSession();
-//		String order_id=(String)session.getAttribute("order_id");
-
+	public void updateOrder(
+			@FormParam("order_id") String id,
+			@FormParam("drink") String drink,
+			@FormParam("size") String size,
+			@FormParam("cost") float cost,
+			@FormParam("addition") String addition,
+			@FormParam("paytype") String paytype,
+			@FormParam("status") boolean status,
+			@Context HttpServletResponse servletResponse
+			) throws IOException {
 		
+		System.out.println("updated order comes");
+		//System.out.println("addition::*"+addition+"*");
+		//System.out.println("id::"+id+" drink::"+drink+" cost::"+cost+" addition::"+addition+" status::"+status);
 		
-		Coffee c = new Coffee();
-		ordersFileDao ofd =  new ordersFileDao();
-		
-		c = ofd.search4Order(id);
-		
-		if(c==null){
-			throw new RuntimeException("GET: Coffee with" + id +  " not found");
+		//Calculating the price
+		float addition_cost=0;
+		if(addition.equals("")==true){
+			addition = "no";
 		}
-		//return c;
+		else{
+			addition_cost = additionCost.instance.getAdditionCost().get(addition);
+		}
 		
-		URI uri = uriInfo.getAbsolutePathBuilder().path(id).build();
-		Response.created(uri).build();
+		float drink_cost = drinkCostDao.instance.getDrinkCost().get(drink);
+		float size_cost = drink_cost* (1 + sizeCostDao.instance.getSizeCost().get(size));
 		
-	
-		req.getSession().setAttribute("order_details", c);
-		resp.sendRedirect("../../order_details.jsp");
+		
+		cost = size_cost + addition_cost;
+		
+		
+		Coffee c = new Coffee(id,drink,size,cost,addition,paytype,status);	
+		System.out.println("id::"+id+" drink::"+drink+" cost::"+cost+" addition::"+addition+" status::"+status);
+		
+		ordersFileDao ofd =  new ordersFileDao();
+		ofd.updateAnOrder(id, c);
+		
+		System.out.println("order "+ id +" has been updated");
+		
+//		URI uri = uriInfo.getAbsolutePathBuilder().path(id).build();
+//		Response.created(uri).build();
+//		
+//	
+//		req.getSession().setAttribute("order_id", id);
+//		resp.sendRedirect("../../create_order.jsp");
+		
+		
 		
 	}
+	
 	
 	
 	@Path("delete")
@@ -243,16 +266,14 @@ public class coffeeOrders {
 		resp.sendRedirect("../../goodbye.jsp");
 		
 	}
-	
-	//TODO:: check 
-	
+		
 	
 	
 	
 	@Path("{order}")
 	public coffeOrder getOrder(
 			@PathParam("order") String id) {
-		System.out.println("id in coffeOrders.java::" + id);
+		//System.out.println("id in coffeOrders.java::" + id);
 		return new coffeOrder(uriInfo, request, id);
 	}
 	

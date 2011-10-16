@@ -71,6 +71,29 @@ public class coffeOrder {
 	}
 
 	
+	
+	// Produces XML or JSON output for a client 'program'			
+	@GET
+	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	public Coffee getOrder() {
+		
+		Coffee c = new Coffee();
+		ordersFileDao ofd =  new ordersFileDao();
+		
+		c = ofd.search4Order(id);
+		
+		//System.out.println("id is :: "+ id);
+		
+		if(c==null){
+			throw new RuntimeException("GET: Coffee with" + id +  " not found");
+		}
+	
+		return c;
+	}
+	
+	
+	
+	
 	@PUT
 	@Produces(MediaType.APPLICATION_XML)
 	public Response putOrder(JAXBElement<Coffee> c) {

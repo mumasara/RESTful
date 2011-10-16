@@ -44,7 +44,7 @@ public class Barista extends HttpServlet {
    */
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    CoffeeParser parser = new CoffeeParser("http://localhost:8080/9322_assignment3/rest/orders");
+    CoffeeParser parser = new CoffeeParser("http://localhost:8081/9322_assignment3/rest/orders");
     Document document = parser.getParsedDocument();
 
     Node root = document.getFirstChild();

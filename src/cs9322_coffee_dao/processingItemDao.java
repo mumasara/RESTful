@@ -22,7 +22,7 @@ public class processingItemDao {
 		result = result + c.getSize()+" ";
 		result = result + Float.toString(c.getCost())+" ";
 		result = result + c.getAddition() + " ";
-		result = result + c.getPaytype() + " ";
+		result = result + c.getPayType() + " ";
 		if(c.getStatusFlag()==true){
 			result += "true";
 		}
@@ -71,7 +71,7 @@ public class processingItemDao {
 			while(i < currentItemList.size()){
 				writer.append( currentItemList.get(i).getId() + " " + currentItemList.get(i).getDrink() + " " + 
 						currentItemList.get(i).getSize() + " " + currentItemList.get(i).getCost() + " " +
-						currentItemList.get(i).getAddition() + " " + currentItemList.get(i).getPaytype() + " " +
+						currentItemList.get(i).getAddition() + " " + currentItemList.get(i).getPayType() + " " +
 						currentItemList.get(i).getStatusFlag() + "\n");
 				i++;
 			}
@@ -98,7 +98,7 @@ public class processingItemDao {
 				c.setSize(currentItemList.get(i).getSize());
 				c.setCost(currentItemList.get(i).getCost());
 				c.setAddition(currentItemList.get(i).getAddition());
-				c.setPayType(currentItemList.get(i).getPaytype());
+				c.setPayType(currentItemList.get(i).getPayType());
 				c.setStatusFlag(currentItemList.get(i).getStatusFlag());
 				break;
 			}

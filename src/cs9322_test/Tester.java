@@ -97,7 +97,7 @@ public class Tester {
 //			System.out.println("c.getstatusFlag:"+c.getStatusFlag());
 			
 			paymentFileDao pfd = new paymentFileDao();	
-			Payment p = new Payment(c.getId(),c.getPaytype(),c.getCost(),c.getPaytype(),true);
+			Payment p = new Payment(c.getId(),c.getPayType(),c.getCost(),c.getPayType(),true);
 			pfd.addPayment(c.getId(), p);
 		}
 

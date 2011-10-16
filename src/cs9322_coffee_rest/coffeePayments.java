@@ -140,14 +140,14 @@ public class coffeePayments {
 			i++;
 		}
 		//card
-		if (c.getPaytype().equals("card") == true){
-			Payment p = new Payment(c.getId(), c.getPaytype(), c.getCost(), c.getPaytype(), true);
+		if (c.getPayType().equals("card") == true){
+			Payment p = new Payment(c.getId(), c.getPayType(), c.getCost(), c.getPayType(), true);
 			pfd.addPayment(order_id, p);
 			return "card swipped !";
 			
 		}
 		else{
-			Payment p = new Payment(c.getId(), c.getPaytype(), c.getCost(), c.getPaytype(), true);
+			Payment p = new Payment(c.getId(), c.getPayType(), c.getCost(), c.getPayType(), true);
 			pfd.addPayment(order_id, p);
 			return "cash paid !";
 		}

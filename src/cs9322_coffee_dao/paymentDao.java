@@ -24,13 +24,13 @@ public enum paymentDao {
 			//System.out.println("key=" + key + " value=" + value);
 			
 			//TODO::: CARD or CASH
-			if(value.getPaytype() == "card"){
+			if(value.getPayType() == "card"){
 				String details = "1234567890";
-				Payment temp = new Payment(value.getId(),value.getPaytype(),value.getCost(),details,value.getStatusFlag());
+				Payment temp = new Payment(value.getId(),value.getPayType(),value.getCost(),details,value.getStatusFlag());
 				contentPayment.put(value.getId(), temp);
 			}
 			else{
-				Payment temp = new Payment(value.getId(),value.getPaytype(),value.getCost(),"cash",value.getStatusFlag());
+				Payment temp = new Payment(value.getId(),value.getPayType(),value.getCost(),"cash",value.getStatusFlag());
 				contentPayment.put(value.getId(), temp);
 			}
 		}

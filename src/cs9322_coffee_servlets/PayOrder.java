@@ -55,9 +55,9 @@ public class PayOrder extends HttpServlet {
 			//create the payment obj
 				Payment p = new Payment();
 				p.setPID(id);
-				p.setPayType(c.getPaytype());
+				p.setPayType(c.getPayType());
 				p.setAmount(c.getCost());
-				p.setDetails(c.getPaytype());
+				p.setDetails(c.getPayType());
 				p.setStatusFlag(true);
 				
 				//System.out.println("payment details:: "+p.getDetails());

@@ -67,20 +67,24 @@ public class Coffee {
     	this.addition = addition;
     }
     
-    public String getPaytype(){
-    	return payType;
-    }
+	public String getPayType(){
+		return payType;
+	}
     public void setPayType(String payType){
     	this.payType = payType;
     }
     
-    public boolean getStatusFlag(){
-    	return statusFlag;
-    }
+
+
     
-    public void setStatusFlag(boolean statusFlag){
-    	this.statusFlag = statusFlag;
-    }
+    
+	public boolean getStatusFlag(){
+		return statusFlag;
+	}
+	
+	public void setStatusFlag(boolean statusFlag){
+		this.statusFlag = statusFlag;
+	}
     
     
 }

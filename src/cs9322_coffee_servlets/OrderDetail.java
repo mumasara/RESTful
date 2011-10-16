@@ -33,7 +33,7 @@ public class OrderDetail extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     String id = request.getParameter("id");
-    CoffeeParser parser = new CoffeeParser("http://localhost:8080/9322_assignment3/rest/orders/" + id);
+    CoffeeParser parser = new CoffeeParser("http://localhost:8081/9322_assignment3/rest/orders/" + id);
     Document document = parser.getParsedDocument();
 
     Node root = document.getFirstChild();
